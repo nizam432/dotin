@@ -1,4 +1,5 @@
-<h1>Hello World</h1>
+<?php get_header(); ?>
+
 <?php 
 	if(have_posts()):
 		while(have_posts()): the_post(); ?>
@@ -10,5 +11,6 @@
 		else:
 			echo '<p>No Content Found</p>';
 	endif;
-	
 ?>
+
+<?php get_footer(); ?>

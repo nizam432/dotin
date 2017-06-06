@@ -4,3 +4,10 @@ Author: MD NIZAM UDDIN
 Author: http://www.mdnizamuddin.com
 Version: 1.0
 */
+body
+{
+	background:#CCC;
+	font-size:14px;
+	font-family:Arial, sans-seruf;
+	color:#333;
+}

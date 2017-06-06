@@ -4,10 +4,39 @@ Author: MD NIZAM UDDIN
 Author: http://www.mdnizamuddin.com
 Version: 1.0
 */
-body
-{
-	background:#CCC;
+body{
 	font-size:14px;
-	font-family:Arial, sans-seruf;
+	font-family:Arial, sans-serif;
 	color:#333;
+}
+
+a:link,
+a:visited{
+	color:#006ec3;
+}
+
+p {
+	line-height:1.65em;
+}
+
+
+/* General Layout */
+div.container {
+	max-width:920px;
+	margin:0 auto;
+	padding-left:20px;
+	padding-right:20px;
+}
+
+
+/* Header */
+.site-header {
+	border-bottom:2px solid #999;
+}
+
+/*Footer*/
+.site-footer
+{
+	margin-top:30px
+	border-top:2px solid #999;
 }

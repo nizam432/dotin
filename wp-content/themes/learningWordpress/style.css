@@ -40,3 +40,21 @@ div.container {
 	margin-top:30px
 	border-top:2px solid #999;
 }
+
+/* info box style */
+div.info-box {
+	width:30%;
+	float:right;
+	margin: 0 0 30px 30px;
+	padding:20px;
+	background:#eee;
+}
+
+div.info-box h4 {
+	margin-bottom:6px;
+}
+
+div.info-box p
+{
+	font-size:85%;
+}

@@ -43,7 +43,7 @@
 					{ ?>
 					<img class="img-responsive" src="<?php echo $header_setting['upload_image_logo']; ?>" style="height:<?php echo $header_setting['height']; ?>px; width:<?php echo $header_setting['width']; ?>px;"/>
 					<?php } else { ?>
-					<img src="<?php echo WEBRITI_TEMPLATE_DIR_URI; ?>/images/logo.png">
+					<img src="<?php echo WEBRITI_TEMPLATE_DIR_URI; ?>assets/images/logo.png">
 					<?php } ?>
 				</a></h1>
 				<?php } ?>	

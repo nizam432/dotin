@@ -9,6 +9,7 @@
 	</head>
 	
 <body <?php body_class(); ?>>
+
 	<!--Logo & Menu Section-->	
 	<nav class="navbar navbar-default">
 		<div class="container">
@@ -35,7 +36,7 @@
 			</button>
 		</div>
 			<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		
 
 			<?php wp_nav_menu( array(  
 				'theme_location' => 'primary',
@@ -51,12 +52,5 @@
 </nav>	
 <!--/Logo & Menu Section-->	
 <div class="clearfix"></div>		
-		<h1> <a href="<?php echo home_url(); ?>"> <?php bloginfo('name');?> </a> </h1>
-		<h5><?php bloginfo('description'); ?></h5>
-		<?php if(is_page('protfolio')) {?>
-			Tanks for frotpolio
-		<?php } ?>
-		<nav class="site-nav">
 
-		</nav>
 	</header> <!-- /site-header -->

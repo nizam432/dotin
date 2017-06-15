@@ -2,7 +2,11 @@
 /**Includes reqired resources here**/
 define('WEBRITI_TEMPLATE_DIR_URI', get_template_directory_uri());
 
+// Set the content_width with 900
+if ( ! isset( $content_width ) ) $content_width = 900;
+require_once('theme_setup_data.php');
 
+	
 /* Includes all style and script files
  */
 function asscommunication_resources(){
@@ -20,7 +24,7 @@ function asscommunication_resources(){
 
 	
 	//wp_enqueue_script( 'jquery' );
-	wp_enqueue_script('jquery-3.2.1.min.js' , WEBRITI_TEMPLATE_DIR_URI.'/assets/js/jquery-3.2.1.min.js');	
+	wp_enqueue_script('jquery.min.js' , WEBRITI_TEMPLATE_DIR_URI.'/assets/js/jquery.min.js');	
     wp_enqueue_script('bootstrap-js' , WEBRITI_TEMPLATE_DIR_URI.'/assets/js/bootstrap.min.js');
 	wp_enqueue_script('menu-js' , WEBRITI_TEMPLATE_DIR_URI.'/assets/js/menu/menu.js');
 }

@@ -2,7 +2,7 @@
 <?php 
 $appointment_options=theme_setup_data();
 $footer_setting = wp_parse_args(  get_option( 'appointment_options', array() ), $appointment_options );
-if ( is_active_sidebar( 'footer-widget-area' ) ) { ?>
+//if ( is_active_sidebar( 'footer-widget-area' ) ) { ?>
 <div class="footer-section">
 	<div class="container">	
 		<div class="row footer-widget-section">

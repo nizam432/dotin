@@ -801,7 +801,7 @@ a:hover, a:focus { text-decoration: none !important;}
 
 /*Blog Section Css ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 .page-builder { margin: 0px; padding: 80px 0 0; }
-.media-body { overflow: hidden; display: block !important; }
+.media-body { overflow: hidden; display: block !important;  display: table-cell !important;    }
 .blog-post-date-area {
 	background: none repeat scroll 0 0 #ffffff;
     float: left;

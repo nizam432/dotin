@@ -61,11 +61,11 @@ function custom_excerpt_length()
 add_filter('excerpt_lenght','custom_excerpt_length');
 
 // Add featured image support
-function learningWordPress_setup() { 
+function asscommunication_setup() { 
 
 	//Navigation Menus
 	register_nav_menus(array(
-		'primary'=>__('Primary Menu'),
+		'top_menu'=>__('Top Menu'),
 		'footer' =>__('Footer Menu'),
 	));
 	
@@ -77,7 +77,7 @@ function learningWordPress_setup() {
 	add_theme_support('post-formats',array('aside','gallery','link'));
 }
 
-add_action('after_setup_theme', 'learningWordPress_setup');
+add_action('after_setup_theme', 'asscommunication_setup');
 
 
 //widgets initialize
@@ -177,6 +177,8 @@ class webriti_nav_walker extends Walker_Nav_Menu {
 
 		$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
 	}
+	
+	
 	function display_element( $element, &$children_elements, $max_depth, $depth=0, $args, &$output ) {
 
 		if ( !$element )
@@ -221,6 +223,7 @@ class webriti_nav_walker extends Walker_Nav_Menu {
 		call_user_func_array(array($this, 'end_el'), $cb_args);
 	}
 }
+
 function webriti_nav_menu_css_class( $classes ) {
 	if ( in_array('current-menu-item', $classes ) OR in_array( 'current-menu-ancestor', $classes ) )
 		$classes[]	=	'active';
@@ -230,14 +233,7 @@ function webriti_nav_menu_css_class( $classes ) {
 add_filter( 'nav_menu_css_class', 'webriti_nav_menu_css_class' );
 
 
-function webriti_page_menu_args( $args ) {
-	if ( ! isset( $args['show_home'] ) )
-		$args['show_home'] = true;
-	return $args;
-}
-add_filter( 'wp_page_menu_args', 'webriti_page_menu_args' );
 
- 
 function webriti_fallback_page_menu( $args = array() ) {
 
 	$defaults = array('sort_column' => 'menu_order, post_title', 'menu_class' => 'menu', 'echo' => true, 'link_before' => '', 'link_after' => '');
@@ -283,43 +279,4 @@ function webriti_fallback_page_menu( $args = array() ) {
 		echo $menu;
 	else
 		return $menu;
-}
-class webriti_walker_page_menu extends Walker_Page{
-	function start_lvl( &$output, $depth = 0, $args = array() ) {
-		$indent = str_repeat("\t", $depth);
-		$output .= "\n$indent<ul class='dropdown-menu'>\n";
-	}
-	function start_el( &$output, $page, $depth=0, $args = array(), $current_page = 0 ) {
-		if ( $depth )
-			$indent = str_repeat("\t", $depth);
-		else
-			$indent = '';
-
-		extract($args, EXTR_SKIP);
-		$css_class = array('page_item', 'page-item-'.$page->ID);
-		if ( !empty($current_page) ) {
-			$_current_page = get_post( $current_page );
-			if ( in_array( $page->ID, $_current_page->ancestors ) )
-				$css_class[] = 'current_page_ancestor';
-			if ( $page->ID == $current_page )
-				$css_class[] = 'current_page_item';
-			elseif ( $_current_page && $page->ID == $_current_page->post_parent )
-				$css_class[] = 'current_page_parent';
-		} elseif ( $page->ID == get_option('page_for_posts') ) {
-			$css_class[] = 'current_page_parent';
-		}
-
-		$css_class = implode( ' ', apply_filters( 'page_css_class', $css_class, $page, $depth, $args, $current_page ) );
-
-		$output .= $indent . '<li class="' . $css_class . '"><a href="' . get_permalink($page->ID) . '">' . $link_before . apply_filters( 'the_title', $page->post_title, $page->ID ) . $link_after . '</a>';
-
-		if ( !empty($show_date) ) {
-			if ( 'modified' == $show_date )
-				$time = $page->post_modified;
-			else
-				$time = $page->post_date;
-
-			$output .= " " . mysql2date($date_format, $time);
-		}
-	}
 }

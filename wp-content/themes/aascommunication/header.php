@@ -38,15 +38,27 @@
 			<!-- Collect the nav links, forms, and other content for toggling -->
 		
 
-			<?php wp_nav_menu( array(  
-				'theme_location' => 'primary',
+			<?php /*wp_nav_menu( array(  
+				'theme_location' => 'top_menu',
 				'container'  => '',
 				'menu_class' => 'nav navbar-nav navbar-right',
 				'fallback_cb' => 'webriti_fallback_page_menu',
 				'items_wrap'  => $social,
 				'walker' => new webriti_nav_walker()
-				 ) );
+				 ) );*/
 				?>
+			
+			<?php
+			$args= array(
+				'theme_location'=>'top_menu',
+				'container'  => '',
+				'menu_class' => 'nav navbar-nav navbar-right',
+				'fallback_cb' => 'webriti_fallback_page_menu',
+				'walker' => new webriti_nav_walker()
+			);
+		?>
+		<?php wp_nav_menu($args); ?>
+				
 		</div><!-- /.navbar-collapse -->
 	</div><!-- /.container-fluid -->
 </nav>	

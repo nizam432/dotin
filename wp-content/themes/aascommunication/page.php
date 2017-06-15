@@ -3,7 +3,7 @@
 get_header();
 
 //include banner page
-get_template_part( 'template-parts/page/content', 'page' );
+get_template_part( 'template-parts/page/content-banner', 'page' );
 
 //content part
 if(have_posts()):

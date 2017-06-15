@@ -1,4 +1,4 @@
-<!-- Footer Section -->
+<!-- Footer Section --> sfddsfd
 <?php 
 $appointment_options=theme_setup_data();
 $footer_setting = wp_parse_args(  get_option( 'appointment_options', array() ), $appointment_options );
@@ -6,7 +6,14 @@ $footer_setting = wp_parse_args(  get_option( 'appointment_options', array() ), 
 <div class="footer-section">
 	<div class="container">	
 		<div class="row footer-widget-section">
-			<?php  dynamic_sidebar( 'footer-widget-area' );	} ?>	
+			<?php  //dynamic_sidebar( 'footer-widget-area' );	//} ?>	
+			
+					<?php
+			$args= array(
+				'theme_location'=>'footer'
+			);
+		?>
+		<?php wp_nav_menu($args); ?>xcvcxvcxvcxvcx
 			<div class="clearfix"></div>
 		</div>
 	</div>

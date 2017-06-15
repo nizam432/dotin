@@ -90,6 +90,10 @@ function ourWidgetsInit() {
 	register_sidebar(array(
 		'name'=> 'Footer area 1',
 		'id' => 'footer1',
+		'before_widget' => '<div class="col-md-3 col-sm-6 footer-widget-column">',
+		'after_widget' => '</div>',
+		'before_title' => '<h3 class="footer-widget-title">',
+		'after_title' => '</h3>',
 	));	
 }
 

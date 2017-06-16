@@ -44,8 +44,8 @@ function asscommunication_setup() {
 	));
 	
 	// Add featured image support
-	add_theme_support('post-tumbnails');
-	add_image_size('small-thumbnails',180,120,true);
+	add_theme_support('post-thumbnails');
+	
 	
 	// Add post format support
 	add_theme_support('post-formats',array('aside','gallery','link'));
@@ -114,4 +114,9 @@ require get_parent_theme_file_path( '/inc/widgets.php' );
  * Nav menu functions.
  */
 require get_parent_theme_file_path( '/inc/nav_walker.php' );
+
+/**
+ * Template tag.
+ */
+require get_parent_theme_file_path( '/inc/template-tag.php' );
 

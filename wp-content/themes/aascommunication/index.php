@@ -1,6 +1,7 @@
 <?php
 get_header();
-//get_template_part('index','banner'); ?>
+get_template_part('template-parts/page/content-banner','page'); ?>
+
 <!-- Blog Section with Sidebar -->
 <div class="page-builder">
 	<div class="container">

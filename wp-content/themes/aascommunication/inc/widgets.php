@@ -4,6 +4,11 @@ function ourWidgetsInit() {
 	register_sidebar(array(
 		'name'=> 'Sidebar',
 		'id' => 'sidebar1',
+		'description' => __( 'Sidebar widget area', 'appointment' ),
+		'before_widget' => '<div class="sidebar-widget">',
+		'after_widget' => '</div>',
+		'before_title' => '<div class="sidebar-widget-title"><h3>',
+		'after_title' => '</h3></div>',
 	)); 
 	
 	register_sidebar(array(

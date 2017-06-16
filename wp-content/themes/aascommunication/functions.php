@@ -2,12 +2,6 @@
 /**Includes reqired resources here**/
 define('WEBRITI_TEMPLATE_DIR_URI', get_template_directory_uri());
 
-// Set the content_width with 900
-if ( ! isset( $content_width ) ) $content_width = 900;
-require_once('theme_setup_data.php');
-
-	
-
 // Get top ancestor
 function get_top_ancestor_id(){
 	global $post;
@@ -119,4 +113,11 @@ require get_parent_theme_file_path( '/inc/nav_walker.php' );
  * Template tag.
  */
 require get_parent_theme_file_path( '/inc/template-tag.php' );
+
+// Set the content_width with 900
+if ( ! isset( $content_width ) ) $content_width = 900;
+require get_parent_theme_file_path( '/inc/theme_setup_data.php' );
+
+	
+
 
